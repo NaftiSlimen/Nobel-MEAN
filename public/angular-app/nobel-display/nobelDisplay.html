@@ -1,0 +1,53 @@
+Informations about nobel winner {{nobelDisplayController.nobel.firstname}} {{nobelDisplayController.nobel.surname}}
+<BR/>
+<BR/>
+<button type="submit" class="btn-success" ng-click="nobelDisplayController.deleteNobel(nobelDisplayController.nobel._id)">Delete Nobel winner</button>
+
+<BR/>
+<BR/>
+<div style="font-size:1vw">
+
+    year: {{nobelDisplayController.nobel.year}}
+    <BR/>
+    gender: {{nobelDisplayController.nobel.gender}}
+    <BR/>
+    category: {{nobelDisplayController.nobel.category}}
+    <BR/>
+    affiliation: {{nobelDisplayController.nobel.affiliation}}
+    <BR/>
+    bornCountry: {{nobelDisplayController.nobel.bornCountry}}
+
+</div>
+<BR/>
+<BR/>
+<BR/>
+<BR/>
+Fully Edit this nobel winner informations:
+<BR/>
+<BR/>
+
+<form style="font-size:1vw" name="nobelDisplayController.editNobelForm" ng-submit="nobelDisplayController.editNobelF()" >
+
+    To completely modify this nobel winner please fill in all the fields below:<BR/>
+
+    Name: <input type="text" ng-value="nobelDisplayController.nobel.firstname" name="title" required ng-model="nobelDisplayController.newnobelName" style="color:black"/><BR/>
+
+    Year: <input type="number" ng-value="nobelDisplayController.nobel.year" name="year" required ng-model="nobelDisplayController.newnobelYear" style="color:black"/><BR/>
+
+    Gender: <select required ng-value="nobelDisplayController.nobel.gender" ng-model="nobelDisplayController.newnobelGender" style="color:black" name="gender" id="cars">
+        <option value="male">male</option>
+        <option value="female">female</option>
+      </select>
+
+    Category: <input type="text" name="category" ng-value="nobelDisplayController.nobel.category" required ng-model="nobelDisplayController.newnobelCategory" style="color:black"/><BR/>
+
+    <BR/>
+    Affiliation: <input type="text" name="affiliation" ng-value="nobelDisplayController.nobel.affiliation" required ng-model="nobelDisplayController.newnobelAffiliation" style="color:black"/>
+
+    <BR/>
+    Country: <input type="text" name="coutry" ng-value="nobelDisplayController.nobel.bornCountry" required ng-model="nobelDisplayController.newnobelCountry" style="color:black"/>
+
+    <BR/>
+    <button type="submit" class="btn-success">Edit nobel</button><BR/>
+
+</form>

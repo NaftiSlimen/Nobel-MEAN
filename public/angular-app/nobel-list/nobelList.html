@@ -1,0 +1,80 @@
+<div style="font-size:2vw">List of nobel winners:</div>
+<BR />
+
+<ul style="font-size:1vw">
+    <li ng-repeat="nobel  in nobelListController.nobels"><a
+            ng-href={{"http://localhost:5000/#/nobels/"+nobel._id}}>{{nobel.firstname}}----{{nobel.year}}</a></li>
+
+</ul>
+<div>
+    <button style="color:black"
+        ng-click="nobelListController.previousPage(nobelListController.number)">Previous</button>
+    <button style="color:black" ng-click="nobelListController.nextPage(nobelListController.number)">Next</button>
+    <p> </p>
+</div>
+
+<div style="font-size:2vw">Add nobel winner</div>
+
+<form style="font-size:1vw" name="nobelListController.addNobelForm" ng-submit="nobelListController.addNobelF()">
+
+    To add a new nobel winner please fill in all the fields below:<BR />
+
+    Name: <input type="text" name="title" required ng-model="nobelListController.nobelName" style="color:black" /><BR />
+
+    Year: <input type="number" name="year" required ng-model="nobelListController.nobelYear"
+        style="color:black" /><BR />
+
+    Gender: <select required ng-model="nobelListController.nobelGender" style="color:black" name="gender" id="cars">
+        <option value="male">male</option>
+        <option value="female" selected>female</option>
+    </select>
+
+    Category: <input type="text" name="category" required ng-model="nobelListController.nobelCategory"
+        style="color:black" /><BR />
+
+    <BR />
+    Affiliation: <input type="text" name="affiliation" required ng-model="nobelListController.nobelAffiliation"
+        style="color:black" />
+
+    <BR />
+    Country: <input type="text" name="coutry" required ng-model="nobelListController.nobelCountry"
+        style="color:black" />
+
+
+    <button type="submit" class="btn-success">Add Nobel</button><BR />
+
+</form>
+<BR />
+<BR />
+<BR />
+<BR />
+<BR />
+<BR />
+<div style="font-size:1vw">
+<div style="font-size:1vw">To find nobel winner from a particular country, input it here: (This is cas sensitive!)</div> 
+<BR />
+Country:
+<BR /><input type="text"  name="title" required ng-model="nobelListController.countrySearchedFor" style="color:black" /><BR /><BR />
+<button type="submit" style="font-size:1vw" class="btn-success" ng-click="nobelListController.searchCountry(nobelListController.countrySearchedFor)">Find Nobel by country:</button><BR /></div>
+<BR />
+<BR />
+<BR />
+<BR />
+<BR />
+<BR />
+<BR />
+<ul style="font-size:1vw">
+    <li ng-repeat=" nobel in nobelListController.searchResult">
+        <a
+            ng-href={{"http://localhost:5000/#/nobels/"+nobel._id}}>{{nobel.firstname}}    {{nobel.surname}}</a>
+    </li>
+</ul>
+
+<BR />
+<BR />
+<BR />
+<BR />
+<BR />
+<BR />
+<BR />
+<BR />
